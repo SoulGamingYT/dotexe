@@ -1,0 +1,236 @@
+/* Base */
+body {
+  background: #0a0a0a;
+  color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Background glow */
+.bg {
+  position: fixed;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 30% 20%, #00f2ff22, transparent),
+              radial-gradient(circle at 80% 70%, #0066ff22, transparent);
+  z-index:-1;
+}
+
+/* Header */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  padding:20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img {
+  width:40px;
+  height:auto;
+}
+
+/* Navigation */
+nav a {
+  margin-left:15px;
+  color:#dcdcff;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+nav a:hover {
+  color:#5865F2;
+}
+
+/* Hero */
+.hero {
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1 {
+  font-size:48px;
+  color:#ffffff;
+}
+
+.hero-logo {
+  width:140px;
+  max-width:40%;
+  height:auto;
+  display:block;
+  margin:0 auto 20px;
+}
+
+.subtitle {
+  color:#aab2ff;
+  opacity:0.9;
+  margin-bottom:20px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Buttons container */
+.buttons {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+/* Base button */
+.btn {
+  padding:12px 22px;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+  transition:all 0.25s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Primary button */
+.glow {
+  background:linear-gradient(135deg, #5865F2, #7b8cff);
+  color:#fff;
+  box-shadow:0 0 12px rgba(88,101,242,0.6);
+}
+
+.glow:hover {
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(88,101,242,0.9);
+}
+
+/* Secondary button */
+.outline {
+  border:2px solid #5865F2;
+  color:#5865F2;
+  background:transparent;
+}
+
+.outline:hover {
+  background:#5865F2;
+  color:#fff;
+}
+
+/* Sections */
+.section {
+  padding:80px 20px;
+  text-align:center;
+}
+
+h2 {
+  margin-top:40px;
+  color:#ffffff;
+}
+
+/* Cards / boxes */
+.card,
+.about-box,
+.info-box,
+.command-block,
+.doc-block {
+  max-width:800px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  transition:0.3s;
+}
+
+.card:hover,
+.command-block:hover,
+.doc-block:hover {
+  box-shadow:0 0 20px rgba(88,101,242,0.25);
+}
+
+/* Grid */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+/* Status */
+.status-grid {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+/* Lists */
+ul {
+  max-width:700px;
+  margin:10px auto;
+  text-align:left;
+}
+
+li {
+  margin:8px 0;
+  opacity:0.85;
+}
+
+/* Search */
+.search {
+  padding:14px;
+  width:320px;
+  border-radius:30px;
+  border:none;
+  margin:20px auto;
+  display:block;
+  background:rgba(255,255,255,0.08);
+  color:white;
+}
+
+.search::placeholder {
+  color:rgba(255,255,255,0.5);
+}
+
+/* Animations */
+
+/* Fade page */
+body.fade-out {
+  opacity:0;
+  transition:0.3s;
+}
+
+/* Scroll reveal */
+.card, h1, h2, p, li {
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s ease;
+}
+
+.visible {
+  opacity:1 !important;
+  transform:translateY(0) !important;
+}
+
+/* Ripple effect */
+.ripple {
+  position:absolute;
+  width:100px;
+  height:100px;
+  background:rgba(255,255,255,0.3);
+  border-radius:50%;
+  transform:scale(0);
+  animation:ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform:scale(3);
+    opacity:0;
+  }
+}
